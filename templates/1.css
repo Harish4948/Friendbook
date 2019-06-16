@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap');
+body{
+
+background-color: Black;
+
+
+}
+.loader
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  overflow: visible;
+  background: black no-repeat center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader.hidden
+{
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+
+}
+
+.bg
+{margin: 0;
+padding: 0;
+width: 100%;
+height: 90vh;
+background: url(background.jpg) no-repeat 90% 100%;
+background-size: cover;
+  filter: blur(1px);
+   -webkit-filter: blur(3px);
+   opacity: 3;
+}
+
+.navbar.navbar .navbar-toggler-icon {
+background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
+}
+
+.container
+{
+
+  background-color: Black;
+
+}
+.jumbotron
+{
+  background-color: Black;
+}
+.navbar
+{
+
+background-color: Black;
+}
+a
+{
+  color: #fff;
+  text-decoration: none !important;
+}
+
+ul{
+
+  margin: 0;
+  padding: 0px;
+  display: flex;
+}
+
+ul li
+{
+
+list-style: none;
+margin: 0 20px;
+transition:0.5s;
+}
+ul li a
+{
+display: block;
+position: relative;
+text-decoration: none;
+padding: 5px;
+font-size: 18px;
+font-family: sans-serif;
+text-transform: uppercase;
+transition: 0.5s;
+color: #fff;
+}
+
+ul:hover li a
+{
+transform: scale(1.5);
+opacity: .2;
+filter: blur(5px);
+}
+ul li a:hover
+{
+transform: scale(1);
+opacity: 1;
+filter: blur(0);
+background: #ff1e31;
+color:White;
+}
+
+ul li a:before
+{
+content: '';
+position: absolute;
+top:0;
+left: 0;
+width: 50%;
+height: 50%;
+
+transition: 0.5s;
+transform-origin: right;
+transform: scaleX(0);
+z-index: -1;
+}
+
+ul li a:hover:before
+{
+  transition: 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.social-icons
+{
+
+  padding: 10px 0;
+}
+
+.social-icons a
+{
+
+display: inline-block;
+width: 100px;
+height: 100px;
+text-align: center;
+background: #262626;
+color:#fff;
+border-radius: 50%;
+transition:0.5s;
+line-height: 36px;
+padding-top: 30px;
+margin-right: 100px;
+margin: 30px;
+border-radius: 50px;
+transform: scale(1.20);
+opacity: 1;
+filter: blur(0.2px);
+
+}
+
+.social-icons a .fa
+{
+line-height: 36px;
+}
+.social-icons a:hover
+{
+background: #fff;
+color:#262626;
+transition: 0.5s;
+transform-origin: left;
+transform: scaleX(1);
+}
+#htb
+{
+font-size: 12px;
+font-family: sans-serif;
+}
+.desc
+{
+
+color: white;
+padding-left: 50%;
+
+}
+
+/*
+.pricard
+{
+margin:0;
+padding:0;
+font-family: 'Josefin Sans',sans-serif;
+
+} */
+
+
+/* .card
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%,-50%);
+
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
+}
+
+.card .front
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #000;
+backface-visibility: hidden;
+
+transform: rotateX(0deg);
+transition: 0.5s;
+}
+.card:hover .front
+{
+transform: rotateX(-180deg);
+
+}
+.card .back
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #000;
+backface-visibility: hidden;
+transform: rotateX(180deg);
+transition: 0.35s;
+}
+.card:hover .back
+{
+transform: rotateX(0deg);
+}
+
+.card .back .details
+{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+left: 0;
+width: 100%;
+text-align: center;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.card .back .details h2
+{
+margin: 0;
+padding: 0;
+font-size: 24px;
+color: #fff;
+}
+.card .back .details h2 span
+{
+color: #a7a7a7;
+font-size: 16px;
+}
+
+.email
+{
+padding: 10px 0;
+}
+
+.email a
+{
+/* display: inline-block; */
+/* width: 16px;
+height: 16px;
+text-align: center;
+background: #262626;
+color: #fff;
+text-decoration: none;
+border-radius: 90%;
+transition: 0.5s;
+}
+
+.email a:hover .fa
+{
+
+  background: #e91e63;
+} */
+
+.info
+{
+  font-family: 'Josefin Sans',sans-serif;
+  color: white;
+}
+.info:hover
+{
+color: #ff1e31;
+transform: scale(1);
+opacity: 1.2;
+filter: blur(1px);
+}
+
+.info h4:hover
+{
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+  background: #ff1e31;
+  color:White;
+
+}
+
+.info h4:before
+{
+content: '';
+position: absolute;
+top:0;
+left: 0;
+width: 50%;
+height: 50%;
+transition: 0.5s;
+transform-origin: right;
+transform: scaleX(0);
+z-index: -1;
+}
+
+.info h4:hover:before
+{
+transition: 0.5s;
+transform-origin: left;
+transform: scaleX(1);
+}
