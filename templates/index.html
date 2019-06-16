@@ -27,16 +27,16 @@
 
           <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href=>FriendsBook</a>
+            <a class="nav-link" href="{{ url_for('index') }}">FriendsBook</a>
           </li>
             <li class="nav-item">
-              <a class="nav-link" href=>Sign in</a>
+              <a class="nav-link" href="{{ url_for('login') }}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=>Register</a>
+              <a class="nav-link" href="{{ url_for('register') }}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=>Posts</a>
+              <a class="nav-link" href="{{ url_for('web_posts') }}">Posts</a>
             </li>
 
           </ul>

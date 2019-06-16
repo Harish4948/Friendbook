@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,SubmitField,BooleanField,PasswordField
 from wtforms.validators import InputRequired,Email,Length
 from flask_bootstrap import Bootstrap
+from db import *
 app=Flask(__name__)
 Bootstrap(app)
 app.config["SECRET_KEY"] =  "pass"
@@ -28,15 +29,28 @@ def register():
     form=register_form()
     print(form.username.data)
     if form.validate_on_submit():
-        print("SOME")
-        return('<h1>'+ form.username.data+' '+form.password.data)
+        data=[form.email.data,form.username.data,form.password.data]
+        db=users()
+        db.register(data)
+        return("Successfully Registered!")
     return render_template("register.html",form=form)
 
 @app.route('/login',methods=['GET','POST'])
 def login():
     form=login_form()
+    if form.validate_on_submit():
+        data=[form.username.data,form.password.data]
+        db=users()
+        result=db.login(data)
+        if result:
+            return "Signin successful"
+        else:
+            return "Invalid username or password"
+
     return render_template("login.html",form=form)
 
-
+@app.route("/web_posts",methods=['GET','POST'])
+def web_posts():
+    return render_template("posts.html")
 if __name__ == "__main__":
     app.run(debug=True)

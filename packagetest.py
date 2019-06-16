@@ -1,7 +1,7 @@
-from db import users
+from db import *
 import datetime
 import time
-creds=["USER","pass"]
-u=users()
-r=u.login(creds)
+creds=["USER","text1"]
+u=posts()
+r=u.post(creds)
 print(r)

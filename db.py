@@ -52,7 +52,10 @@ class posts:
         l.write(str(updated_val))
         l.close()
         data={"_id":updated_val,"username":creds[0],"text":creds[1]}
-
+        self.collection.insert_one(data)
+    def get_post():
+        db_posts=self.collection.find()
+        
 
 
 
