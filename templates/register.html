@@ -12,12 +12,13 @@
         {{ form.submit() }} -->
         {{ form.csrf_token }}        
         {{form.email.label}}
-        {{form.email(class_="form-control")}}
+        {{form.email(class_="form-control")}} <br>
         {{form.username.label}}
-        {{form.username(class_="form-control")}}
+        {{form.username(class_="form-control")}} <br>
         {{form.password.label}}
         {{form.password(class_="form-control")}}
         <!-- <input type="button" value="submit"> -->
+        <br>
         {{form.submit(class_="btn btn-primary")}}
         
 

@@ -2,8 +2,8 @@ from mongoengine import connect
 import pymongo
 from mongoengine import *
 import datetime
-# conn = pymongo.MongoClient("mongodb+srv://admin:d3ku123@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
-# database=conn['mydb']
+conn = pymongo.MongoClient("mongodb+srv://admin:d3ku123@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
+database=conn['mydb']
 # collection=database['users']
 
 # INSERT
@@ -37,13 +37,22 @@ import datetime
 #     w=s+1
 # with open("no_of_posts.txt","w") as p:
 #     p.write(str(w))
-w=0
-f=open("no_of_posts.txt","r")
-no_of_posts=int(f.readline())
-w=no_of_posts+1
-print(no_of_posts)
-f.close()
-print(w)
-l=open("no_of_posts.txt","w")
-l.write(str(w))
-l.close()
+# w=0
+# f=open("no_of_posts.txt","r")
+# no_of_posts=int(f.readline())
+# w=no_of_posts+1
+# print(no_of_posts)
+# f.close()
+# print(w)
+# l=open("no_of_posts.txt","w")
+# l.write(str(w))
+# l.close()
+
+
+
+collection=database['posts']
+db_posts=list(collection.find())
+print(type(db_posts))
+print(db_posts)
+for i in db_posts:
+    print(type(i))

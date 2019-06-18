@@ -28,18 +28,22 @@ class users:
         data={"username":creds[0],"password":creds[1]}
         user={"username":creds[0]}
         result_of_query=self.collection.find_one(user)
-        pass_actual=result_of_query["password"]
-        if(result_of_query!=None):
-            if(pass_actual==creds[1]):
-                return True
+        try:
+            pass_actual=result_of_query["password"]
+            if(result_of_query!=None):
+                if(pass_actual==creds[1]):
+                    return True
+                else:
+                    return False
 
-        else:
+            else:
+                return False
+        except:
             return False
-
-class posts:
+class db_posts:
 
     collection=database['posts']
-    def post(self,creds):
+    def insert_post(self,creds):
         updated_val=0
         prev_val=0
         f=open("no_of_posts.txt","r")
@@ -53,8 +57,9 @@ class posts:
         l.close()
         data={"_id":updated_val,"username":creds[0],"text":creds[1]}
         self.collection.insert_one(data)
-    def get_post():
-        db_posts=self.collection.find()
+    def get_post(self):
+        db_posts=list(self.collection.find())
+        return db_posts
         
 
 

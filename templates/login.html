@@ -1,25 +1,36 @@
 {% extends "index.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block content %}
-<div class="container">
-    <div class="form-group">
+
+<!-- <div class="container"> -->
+    <div class="form-group" id="container">
     <form method="POST" action="/login">
+        
         {{ form.hidden_tag() }}
      
         {{ form.csrf_token }}        
         {{form.username.label}}
         {{form.username(class_="form-control")}}
+        <br>
         {{form.password.label}}
         {{form.password(class_="form-control")}}
         <!-- <input type="button" value="submit"> -->
+        <br>
         {{form.submit(class_="btn btn-primary")}}
         
 
     </form>
-    {% if form.errors %}
+    
+{% if form.errors %}
 {{ form.errors }}
 {% endif %}
 </div>
-</div>
-
+<!-- </div> -->
+{% if msg %}
+<div class="container alert alert-danger" role="alert">
+    
+    {{ msg }}
+    
+    </div>
+    {% endif %}
 {% endblock %}
