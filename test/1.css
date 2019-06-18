@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+#particles-js
+{
+
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+form
+{
+align-content: center;
+justify-content: center;
+margin-left: 50%;
+float: inherit;
+display: block;
+
+}
