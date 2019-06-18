@@ -1,7 +1,7 @@
 import pymongo
 import datetime
 
-conn = pymongo.MongoClient("mongodb+srv://admin:d3ku123@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
+conn = pymongo.MongoClient("mongodb+srv://admin:pass@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
 database=conn['mydb']
 
 class users:
