@@ -4,6 +4,7 @@ from wtforms import StringField,SubmitField,BooleanField,PasswordField
 from wtforms.validators import InputRequired,Email,Length
 from flask_bootstrap import Bootstrap
 from db import *
+import json
 app=Flask(__name__)
 Bootstrap(app)
 app.config["SECRET_KEY"] =  "pass"
@@ -63,11 +64,12 @@ def web_posts():
     form=posts()
     db=db_posts()
     res=db.get_post()
-
+    # res=dict(ChainMap(*db_posts1))
     if form.validate_on_submit():
         cred=[session["username"],form.text.data]
         r=db.insert_post(cred)
-    
+    res=json.dumps(res)
+    print(res)
     return render_template("posts.html",form=form,res=res)
 @app.route("/logout")
 def logout():

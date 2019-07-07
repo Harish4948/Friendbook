@@ -1,7 +1,8 @@
 import pymongo
 import datetime
+from collections import ChainMap
 
-conn = pymongo.MongoClient("mongodb+srv://admin:pass@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
+conn = pymongo.MongoClient("mongodb+srv://admin:d3ku123@mydb-lurns.mongodb.net/test?retryWrites=true&w=majority")
 database=conn['mydb']
 
 class users:
@@ -59,6 +60,7 @@ class db_posts:
         self.collection.insert_one(data)
     def get_post(self):
         db_posts=list(self.collection.find())
+    # ?db_posts=dict(self.collection.find())
         return db_posts
         
 

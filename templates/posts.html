@@ -2,16 +2,21 @@
 {% block content %}
 <div class="container">
     <div class="jumbotron">
+        <br>
         <h1><strong> Welcome </strong>{{session.username}}</h1>
         <form action="web_posts" method="POST">
             {{form.hidden_tag()}}
             {{ form.csrf_token }}        
             {{form.text.label}}
             {{form.text(class_="form-control")}}
-            <br>
+            <bdr>
             {{form.submit(class_="btn btn-primary")}}
-
-{{res}}
+       <ul class="posts">
+            {{res}}
+        </ul>
+        <ul class="post">
+            
+        </ul>
         </form>
     </div>
 </div>
